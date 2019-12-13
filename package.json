@@ -21,7 +21,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://nuty-girl.github.io/goit-react-hw-04-image-finder",
+  "homepage": "https://nuty-girl.github.io/goit-react-hw-04-reader",
   "eslintConfig": {
     "extends": "react-app"
   },
