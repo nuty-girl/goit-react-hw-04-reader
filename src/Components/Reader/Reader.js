@@ -74,7 +74,7 @@ export default class Reader extends Component {
       0,
     );
     const index = Number(this.getIndexPublicationFromProps(this.props));
-    const item = items[index];
+    const item = items[index - 1];
 
     return (
       <div className={styles.reader}>
@@ -88,7 +88,7 @@ export default class Reader extends Component {
           indexPublication={index}
           publicationQuantity={publicationQuantity}
         />
-        <Publication publication={item} indexPublication={index} />
+        {item && <Publication publication={item} indexPublication={index} />}
       </div>
     );
   }
