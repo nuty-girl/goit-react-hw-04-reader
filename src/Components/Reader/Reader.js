@@ -33,10 +33,14 @@ export default class Reader extends Component {
   };
 
   componentDidMount() {
-    const { location, history } = this.props;
+    const { location, history, items } = this.props;
     const index = Number(this.getIndexPublicationFromProps(this.props));
+    const publicationQuantity = items.reduce(
+      (acc, item) => 1 + items.indexOf(item),
+      0,
+    );
 
-    if (!index) {
+    if (!index || index > publicationQuantity || index < 1) {
       history.replace({
         pathname: location.pathname,
         search: `item=1`,
